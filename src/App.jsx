@@ -11,16 +11,16 @@ function App() {
     const [data, setData] = useState(null)
     useEffect(() => {
         fetch('https://newsapi.org/v2/everything?q=tesla&from=2025-02-16&sortBy=publishedAt&apiKey=99fd726d35004e67a57d77f2f250df73').then(res => res.json()).then(data => {
-            setData(data)
+            setData(data);
         })
     }, [])
 
     return (
         <>
             <div>
-                {data && data.articles.map((item) => {
-                    return <img src={item.urlToImage} alt={item.title} />
-                })}
+                {/* {data && data.articles.map((item) => { */}
+                {/* return <img src={item.urlToImage} alt={item.title} /> */}
+                {/* })} */}
                 <a href="https://vite.dev" target="_blank">
                     <img src={viteLogo} className="logo" alt="Vite logo" />
                 </a>
