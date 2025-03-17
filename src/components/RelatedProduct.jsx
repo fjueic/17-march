@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useCart } from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 const RelatedProduct = ({ category }) => {
     const [products, setProducts] = useState([]);
-    const { addToCart } = useCart();
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (category) {
@@ -26,7 +26,11 @@ const RelatedProduct = ({ category }) => {
                     {products.map((item) => (
                         <div
                             key={item.id}
-                            className="flex items-center justify-between border p-4 rounded-lg shadow-md"
+                            className="flex items-center justify-between border p-4 rounded-lg shadow-md cursor-pointer"
+                            onClick={() => {
+                                navigate(`/product/${item.id}`)
+
+                            }}
                         >
                             <div className="flex items-center space-x-4">
                                 <img
@@ -40,10 +44,10 @@ const RelatedProduct = ({ category }) => {
                                 </div>
                             </div>
                             <button
-                                onClick={() => addToCart(item)}
+                                onClick={() => navigate(`/product/${item.id}`)}
                                 className="px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
                             >
-                                Add to Cart
+                                Go To Product
                             </button>
                         </div>
                     ))}
