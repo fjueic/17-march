@@ -1,10 +1,12 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-    base: '17-march',
+    // base: '/17-march',
     plugins: [
+        tailwindcss(),
         react(),
         VitePWA({
             workbox: {
