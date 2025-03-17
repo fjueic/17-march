@@ -1,4 +1,5 @@
 # E-commerce App
+netlify link: https://amazing-manatee-9b4ca6.netlify.app/
 
 ## Screenshots
 
