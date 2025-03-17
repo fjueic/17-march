@@ -11,6 +11,7 @@ const Product = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        setInCart(false);
         if (cart) {
             for (let item of cart) {
                 if (item.id == id) {
