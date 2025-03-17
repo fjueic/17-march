@@ -38,8 +38,8 @@ export const CartProvider = ({ children }) => {
             setCart([]);
             return;
         }
-        if (localStorage.getItem(user.email)) {
-            setCart(JSON.parse(localStorage.getItem(user.email)))
+        if (localStorage.getItem(user.token)) {
+            setCart(JSON.parse(localStorage.getItem(user.token)))
         }
     }, [user])
 
